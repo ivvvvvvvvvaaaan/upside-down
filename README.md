@@ -59,22 +59,29 @@ This creates `src/app/my-feature-name/page.tsx` with boilerplate ready to custom
 
 ---
 
-## Using Components
+## Design System
 
-Import from `@/components/ui`:
+This template uses the **Hawkins Design System** with:
+- **RGB-based color tokens** for maximum flexibility
+- **Semantic naming** (surface, foreground, border systems)
+- **shadcn/ui compatibility** - add any shadcn component easily
+- **Full light/dark mode** support
 
+### Using Components
+
+Built-in components:
 ```tsx
 import { Button, Card, Stack, Text, Input, Badge } from '@/components/ui'
 ```
 
-Available components:
-- **Layout:** `Stack`, `Card`, `Divider`
-- **Typography:** `Text`
-- **Actions:** `Button`, `IconButton`
-- **Forms:** `Input`, `Select`
-- **Data:** `Avatar`, `Badge`
-- **Feedback:** `Modal`, `Alert`
-- **Navigation:** `Tabs`, `TabsList`, `Tab`, `TabsContent`
+Add shadcn/ui components:
+```bash
+npx shadcn@latest add button
+npx shadcn@latest add dialog
+npx shadcn@latest add dropdown-menu
+```
+
+Browse all shadcn components: [ui.shadcn.com](https://ui.shadcn.com)
 
 See `docs/COMPONENTS.md` for full API reference.
 
@@ -86,11 +93,19 @@ Click the moon/sun icon in the top-right corner to toggle dark mode. All compone
 
 ---
 
-## Deploy to Vercel
+## Deployment (Designer-Friendly)
 
-1. Push to GitHub
-2. Import in [Vercel](https://vercel.com)
-3. Deploy — every push creates a preview URL
+**Save your work** (auto-deploys to live site):
+```bash
+npm run save
+```
+
+**Create a version** (permanent snapshot with unique URL):
+```bash
+npm run publish
+```
+
+**First time?** See the full [Deployment Guide](DEPLOYMENT.md) for step-by-step setup (15 min, one-time)
 
 ---
 

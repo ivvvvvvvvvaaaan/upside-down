@@ -4,36 +4,289 @@
 
 /*
  * ===========================================
- * CSS VARIABLES FOR THEMING
+ * HAWKINS DESIGN SYSTEM - THEME TOKENS
  * ===========================================
- * These enable light/dark mode switching.
- * Components use these via Tailwind config.
+ * RGB-based color system for maximum flexibility
+ * Supports light/dark modes with semantic naming
  */
 
 :root {
-  /* Light mode (default) */
-  --surface-primary: #ffffff;
-  --surface-secondary: #fafafa;
-  --surface-tertiary: #f5f5f5;
-  
-  --content-primary: #171717;
-  --content-secondary: #525252;
-  --content-tertiary: #a3a3a3;
-  
-  --border-color: #e5e5e5;
+  /* Light theme (default) */
+  --border-default: 255 255 255;
+  --border-dim-rgb: 255 255 255;
+  --border-elevation-rgb: 255 255 255;
+  --border-inverse: 128 128 128;
+  --border-inverse-dim-rgb: 128 128 128;
+  --border-inverse-subtle-rgb: 128 128 128;
+  --border-subtle-rgb: 128 128 128;
+  --border-system-error: 247 99 107;
+  --border-system-focus: 64 97 231;
+  --border-system-success: 10 163 86;
+  --border-system-warning: 195 131 14;
+
+  --foreground-rgb: 0 0 0;
+  --foreground-dim-rgb: 0 0 0;
+  --foreground-subtle-rgb: 0 0 0;
+  --foreground-inverse: 255 255 255;
+  --foreground-inverse-dim-rgb: 255 255 255;
+  --foreground-inverse-subtle-rgb: 255 255 255;
+  --foreground-product-brand: 229 9 20;
+  --foreground-system-error: 247 99 107;
+  --foreground-system-link: 136 159 249;
+  --foreground-system-success: 82 200 141;
+  --foreground-system-warning: 229 181 93;
+
+  --surface-background-0: 255 255 255;
+  --surface-background-1: 250 250 250;
+  --surface-background-2: 242 242 242;
+  --surface-background-3: 229 229 229;
+  --surface-background-4: 196 196 196;
+  --surface-background-5: 128 128 128;
+  --surface-background-6: 15 15 15;
+
+  --surface-flat: 255 255 255;
+  --surface-high: 255 255 255;
+  --surface-highlight-rgb: 0 0 0;
+  --surface-low: 255 255 255;
+  --surface-mid: 255 255 255;
+  --surface-overlay-rgb: 0 0 0;
+
+  --surface-product-brand: 229 9 20;
+  --surface-system-error: 247 99 107;
+  --surface-system-neutral: 128 128 128;
+  --surface-system-success: 10 163 86;
+  --surface-system-warning: 195 131 14;
+
+  --shadow-flat: rgba(0, 0, 0, 0);
+  --shadow-high-primary: rgba(0, 0, 0, 0.1);
+  --shadow-high-secondary: rgba(0, 0, 0, 0.1);
+  --shadow-low-primary: rgba(0, 0, 0, 0.1);
+  --shadow-low-secondary: rgba(0, 0, 0, 0.1);
+  --shadow-mid-primary: rgba(0, 0, 0, 0.5);
+  --shadow-mid-secondary: rgba(0, 0, 0, 0.6);
+
+  /* Purple color system */
+  --purple-50: 240 225 245;
+  --purple-100: 236 195 251;
+  --purple-200: 228 161 250;
+  --purple-300: 214 125 247;
+  --purple-400: 201 79 245;
+  --purple-500: 176 56 220;
+  --purple-600: 152 45 190;
+  --purple-700: 121 42 149;
+  --purple-800: 89 33 110;
+  --purple-900: 57 25 69;
+  --purple-950: 28 14 32;
+
+  /* Yellow color system */
+  --yellow-50: 247 239 223;
+  --yellow-100: 247 224 181;
+  --yellow-200: 242 205 136;
+  --yellow-300: 229 181 93;
+  --yellow-400: 216 157 49;
+  --yellow-500: 195 131 14;
+  --yellow-600: 159 108 15;
+  --yellow-700: 132 93 22;
+  --yellow-800: 97 71 23;
+  --yellow-900: 63 48 20;
+  --yellow-950: 33 26 13;
+
+  /* Blue color system */
+  --blue-50: 223 233 247;
+  --blue-100: 188 216 255;
+  --blue-200: 148 194 255;
+  --blue-300: 105 168 255;
+  --blue-400: 68 142 244;
+  --blue-500: 48 120 220;
+  --blue-600: 29 99 196;
+  --blue-700: 29 82 157;
+  --blue-800: 28 64 114;
+  --blue-900: 23 43 71;
+  --blue-950: 13 22 33;
+
+  /* Gray color system */
+  --gray-50: 250 250 250;
+  --gray-100: 242 242 242;
+  --gray-200: 229 229 229;
+  --gray-300: 214 214 214;
+  --gray-400: 196 196 196;
+  --gray-500: 128 128 128;
+  --gray-600: 65 65 65;
+  --gray-700: 45 45 45;
+  --gray-800: 35 35 35;
+  --gray-900: 22 22 22;
+  --gray-950: 15 15 15;
+
+  /* Red color system */
+  --red-50: 245 225 226;
+  --red-100: 250 188 191;
+  --red-200: 249 146 151;
+  --red-300: 247 99 107;
+  --red-400: 235 57 66;
+  --red-500: 229 9 20;
+  --red-600: 193 17 25;
+  --red-700: 153 22 29;
+  --red-800: 111 24 29;
+  --red-900: 70 21 24;
+  --red-950: 33 13 14;
+
+  /* Indigo color system */
+  --indigo-50: 225 229 245;
+  --indigo-100: 199 210 252;
+  --indigo-200: 169 185 250;
+  --indigo-300: 136 159 249;
+  --indigo-400: 91 121 241;
+  --indigo-500: 64 97 231;
+  --indigo-600: 52 81 197;
+  --indigo-700: 44 66 156;
+  --indigo-800: 35 51 113;
+  --indigo-900: 25 34 71;
+  --indigo-950: 13 17 33;
+
+  /* Green color system */
+  --green-50: 222 245 234;
+  --green-100: 178 237 207;
+  --green-200: 132 223 178;
+  --green-300: 82 200 141;
+  --green-400: 43 184 113;
+  --green-500: 10 163 86;
+  --green-600: 12 136 73;
+  --green-700: 16 113 64;
+  --green-800: 17 84 50;
+  --green-900: 15 56 36;
+  --green-950: 11 33 22;
+
+  /* Primary color */
+  --primary-rgb: var(--indigo-500);
+  --primary-foreground-rgb: 255 255 255;
+
+  /* Base colors */
+  --background-rgb: 255 255 255;
+
+  /* Semantic colors */
+  --secondary-rgb: 229 231 235;
+  --secondary-foreground-rgb: 0 0 0;
+  --muted-rgb: 243 244 246;
+  --muted-foreground-rgb: 107 114 128;
+  --accent-rgb: 243 244 246;
+  --accent-foreground-rgb: 0 0 0;
+
+  /* Destructive Semantic Colors */
+  --destructive-background-rgb: var(--red-600);
+  --destructive-foreground-rgb: 255 255 255;
+  --destructive-secondary-border-rgb: var(--red-500);
+  --destructive-secondary-foreground-rgb: var(--red-600);
+
+  /* HSL variables for shadcn/ui compatibility */
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 229 84% 62%;
+  --radius: 0.5rem;
+  --chart-1: 229 84% 62%;
+  --chart-2: 169 84% 62%;
+  --chart-3: 349 84% 62%;
+  --chart-4: 289 84% 62%;
+  --chart-5: 199 84% 62%;
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 0 0% 9%;
+  --sidebar-primary: 229 84% 62%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 96.1%;
+  --sidebar-accent-foreground: 0 0% 9%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 229 84% 62%;
 }
 
 .dark {
-  /* Dark mode */
-  --surface-primary: #171717;
-  --surface-secondary: #262626;
-  --surface-tertiary: #404040;
-  
-  --content-primary: #fafafa;
-  --content-secondary: #a3a3a3;
-  --content-tertiary: #737373;
-  
-  --border-color: #404040;
+  /* Dark theme */
+  --border-default: 128 128 128;
+  --border-dim-rgb: 128 128 128;
+  --border-elevation-rgb: 0 0 0;
+  --border-inverse: 255 255 255;
+  --border-inverse-dim-rgb: 255 255 255;
+  --border-inverse-subtle-rgb: 255 255 255;
+  --border-subtle-rgb: 128 128 128;
+  --border-system-error: 193 17 25;
+  --border-system-focus: 64 97 231;
+  --border-system-success: 10 163 86;
+  --border-system-warning: 195 131 14;
+
+  --foreground-rgb: 255 255 255;
+  --foreground-dim-rgb: 255 255 255;
+  --foreground-subtle-rgb: 255 255 255;
+  --foreground-inverse: 0 0 0;
+  --foreground-inverse-dim-rgb: 0 0 0;
+  --foreground-inverse-subtle-rgb: 0 0 0;
+  --foreground-product-brand: 229 9 20;
+  --foreground-system-error: 247 99 107;
+  --foreground-system-link: 52 81 197;
+  --foreground-system-success: 82 200 141;
+  --foreground-system-warning: 229 181 93;
+
+  --surface-background-0: 15 15 15;
+  --surface-background-1: 22 22 22;
+  --surface-background-2: 35 35 35;
+  --surface-background-3: 45 45 45;
+  --surface-background-4: 65 65 65;
+  --surface-background-5: 128 128 128;
+  --surface-background-6: 255 255 255;
+
+  --surface-flat: 22 22 22;
+  --surface-high: 65 65 65;
+  --surface-highlight-rgb: 255 255 255;
+  --surface-low: 35 35 35;
+  --surface-mid: 45 45 45;
+  --surface-overlay-rgb: 0 0 0;
+
+  --surface-product-brand: 229 9 20;
+  --surface-system-error: 247 99 107;
+  --surface-system-neutral: 128 128 128;
+  --surface-system-success: 10 163 86;
+  --surface-system-warning: 195 131 14;
+
+  --shadow-flat: rgba(0, 0, 0, 0);
+  --shadow-high-primary: rgba(0, 0, 0, 0.5);
+  --shadow-high-secondary: rgba(0, 0, 0, 0.6);
+  --shadow-low-primary: rgba(0, 0, 0, 0.5);
+  --shadow-low-secondary: rgba(0, 0, 0, 0.6);
+  --shadow-mid-primary: rgba(0, 0, 0, 0.5);
+  --shadow-mid-secondary: rgba(0, 0, 0, 0.6);
+
+  /* Base colors */
+  --background-rgb: 15 15 15;
+
+  /* Semantic colors */
+  --secondary-rgb: 38 38 38;
+  --secondary-foreground-rgb: 255 255 255;
+  --muted-rgb: 38 38 38;
+  --muted-foreground-rgb: 163 163 163;
+  --accent-rgb: 38 38 38;
+
+  /* Destructive Semantic Colors */
+  --destructive-background-rgb: var(--red-300);
+  --destructive-foreground-rgb: 0 0 0;
+  --destructive-secondary-border-rgb: var(--red-300);
+  --destructive-secondary-foreground-rgb: var(--red-300);
+
+  /* HSL variables for shadcn/ui compatibility */
+  --border: 0 0% 14.9%;
+  --input: 0 0% 17.6%;
+  --ring: 229 84% 62%;
+  --chart-1: 229 84% 62%;
+  --chart-2: 169 84% 62%;
+  --chart-3: 349 84% 62%;
+  --chart-4: 289 84% 62%;
+  --chart-5: 199 84% 62%;
+  --sidebar-background: 0 0% 8.6%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 229 84% 62%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 13.7%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 0 0% 17.6%;
+  --sidebar-ring: 229 84% 62%;
+
+  --accent-foreground-rgb: 255 255 255;
 }
 
 /*
@@ -42,19 +295,14 @@
  * ===========================================
  */
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  @apply bg-surface-primary text-content-primary;
-  font-family: theme('fontFamily.sans');
-  transition: background-color 0.2s, color 0.2s;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
 
 /*
@@ -70,13 +318,4 @@ body {
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
-}
-
-/* Focus ring for accessibility */
-.focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
-}
-
-.dark .focus-ring {
-  @apply focus:ring-offset-gray-900;
 }

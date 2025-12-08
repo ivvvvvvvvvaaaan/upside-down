@@ -34,14 +34,14 @@ export default function RootLayout({
         {/* Theme toggle - fixed position on all pages */}
         <button
           onClick={toggleTheme}
-          className="fixed top-4 right-4 z-50 w-10 h-10 rounded-full bg-surface-secondary border border-border flex items-center justify-center text-content-secondary hover:text-content-primary hover:bg-surface-tertiary transition-colors"
+          className="fixed top-4 right-4 z-50 w-10 h-10 rounded-full bg-surface-1 border border-border flex items-center justify-center text-foreground-dim hover:text-foreground hover:bg-surface-2 transition-colors"
           aria-label="Toggle theme"
         >
           {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
         </button>
         
         {/* Page content */}
-        <main className="min-h-screen bg-surface-primary">
+        <main className="min-h-screen">
           {children}
         </main>
       </body>
