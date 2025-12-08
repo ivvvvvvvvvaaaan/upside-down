@@ -1,7 +1,7 @@
 {
   "name": "prototype-factory",
-  "version": "0.1.0",
-  "description": "Next.js template for rapidly building clickable prototypes with pre-built UI components",
+  "version": "1.0.0",
+  "description": "Next.js template for building clickable prototypes with Hawkins Design System",
   "private": false,
   "keywords": [
     "nextjs",
