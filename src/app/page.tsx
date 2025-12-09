@@ -34,7 +34,7 @@ export default function Home() {
         {/* Hero */}
         <Stack spacing="md">
           <Stack direction="horizontal" spacing="sm" align="center">
-            <Rocket className="w-8 h-8 text-primary-500" />
+            <Rocket className="w-8 h-8 text-primary" />
             <Text variant="headline-1">Prototype Factory</Text>
           </Stack>
           <Text variant="body-1" color="secondary" className="max-w-2xl">
@@ -47,16 +47,16 @@ export default function Home() {
         <Card variant="outlined" padding="lg">
           <Stack spacing="md">
             <Stack direction="horizontal" spacing="sm" align="center">
-              <Zap className="w-5 h-5 text-primary-500" />
+              <Zap className="w-5 h-5 text-primary" />
               <Text variant="headline-3">Quick Start</Text>
             </Stack>
             <Stack spacing="sm">
-              <code className="block bg-gray-900 text-gray-100 dark:bg-gray-800 p-4 rounded-lg text-sm font-mono overflow-x-auto">
-                <span className="text-gray-500"># Create a new prototype page</span>{'\n'}
+              <code className="block bg-surface-6 text-foreground-inverse p-4 rounded-lg text-sm font-mono overflow-x-auto">
+                <span className="text-foreground-inverse-dim"># Create a new prototype page</span>{'\n'}
                 npm run new:page my-feature
               </code>
               <Text variant="body-2" color="secondary">
-                This creates a new page at <code className="text-primary-500">/my-feature</code> with boilerplate ready to customize.
+                This creates a new page at <code className="text-primary">/my-feature</code> with boilerplate ready to customize.
               </Text>
             </Stack>
           </Stack>
@@ -87,7 +87,7 @@ export default function Home() {
         {/* Resources */}
         <Stack spacing="md">
           <Stack direction="horizontal" spacing="sm" align="center">
-            <BookOpen className="w-5 h-5 text-content-secondary" />
+            <BookOpen className="w-5 h-5 text-foreground-dim" />
             <Text variant="headline-2">Resources</Text>
           </Stack>
           <div className="grid gap-4 sm:grid-cols-3">

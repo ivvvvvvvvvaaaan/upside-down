@@ -49,11 +49,11 @@ function Text({
   }
   
   const colorStyles = {
-    primary: 'text-content-primary',
-    secondary: 'text-content-secondary',
-    tertiary: 'text-content-tertiary',
-    error: 'text-error',
-    success: 'text-success',
+    primary: 'text-foreground',
+    secondary: 'text-foreground-dim',
+    tertiary: 'text-foreground-subtle',
+    error: 'text-foreground-system-error',
+    success: 'text-foreground-system-success',
   }
   
   const weightStyles = {

@@ -52,10 +52,10 @@ export default function DashboardExample() {
             </Text>
           </Stack>
           <Stack direction="horizontal" spacing="sm">
-            <Button variant="secondary" leftIcon={<Settings className="w-4 h-4" />}>
+            <Button variant="secondary" icon={<Settings className="w-4 h-4" />}>
               Settings
             </Button>
-            <Button variant="primary" leftIcon={<Plus className="w-4 h-4" />}>
+            <Button variant="primary" icon={<Plus className="w-4 h-4" />}>
               Add New
             </Button>
           </Stack>
@@ -160,7 +160,7 @@ export default function DashboardExample() {
                       <Text variant="caption" color="secondary" className="w-16">
                         {user.role}
                       </Text>
-                      <Button variant="ghost" size="sm">View</Button>
+                      <Button variant="tertiary" size="compact">View</Button>
                     </div>
                   ))}
                 </Stack>

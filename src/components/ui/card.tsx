@@ -25,9 +25,9 @@ function Card({
   ...props 
 }: CardProps) {
   const variants = {
-    default: 'bg-surface-secondary',
-    elevated: 'bg-surface-primary shadow-elevated',
-    outlined: 'bg-surface-primary border border-border',
+    default: 'bg-surface-1',
+    elevated: 'bg-surface-0 shadow-mid',
+    outlined: 'bg-surface-0 border border-border',
   }
   
   const paddings = {

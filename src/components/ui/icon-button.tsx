@@ -11,16 +11,16 @@ import { forwardRef } from 'react'
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: React.ReactNode
   label: string  // Required for accessibility
-  variant?: 'primary' | 'secondary' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'tertiary'
   size?: 'sm' | 'md' | 'lg'
 }
 
 const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ className, icon, label, variant = 'ghost', size = 'md', ...props }, ref) => {
+  ({ className, icon, label, variant = 'tertiary', size = 'md', ...props }, ref) => {
     const variants = {
-      primary: 'bg-primary-500 text-white hover:bg-primary-600',
-      secondary: 'border border-border bg-surface-primary text-content-primary hover:bg-surface-secondary',
-      ghost: 'text-content-secondary hover:text-content-primary hover:bg-surface-secondary',
+      primary: 'bg-primary text-primary-foreground hover:bg-primary/90',
+      secondary: 'border border-border-subtle bg-surface-0 text-foreground hover:bg-surface-highlight',
+      tertiary: 'text-foreground-dim hover:text-foreground hover:bg-surface-highlight',
     }
     
     const sizes = {

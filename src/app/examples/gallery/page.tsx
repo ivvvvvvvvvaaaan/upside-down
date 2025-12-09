@@ -53,7 +53,7 @@ export default function GalleryExample() {
               Browse and manage your media assets
             </Text>
           </Stack>
-          <Button variant="primary" leftIcon={<Plus className="w-4 h-4" />}>
+          <Button variant="primary" icon={<Plus className="w-4 h-4" />}>
             Upload Media
           </Button>
         </Stack>
@@ -70,8 +70,8 @@ export default function GalleryExample() {
               {filterTags.map(tag => (
                 <Button
                   key={tag}
-                  variant={activeTag === tag ? 'primary' : 'ghost'}
-                  size="sm"
+                  variant={activeTag === tag ? 'primary' : 'tertiary'}
+                  size="compact"
                   onClick={() => setActiveTag(tag)}
                 >
                   {tag}
@@ -89,10 +89,10 @@ export default function GalleryExample() {
                 {selected.length} item{selected.length > 1 ? 's' : ''} selected
               </Text>
               <Stack direction="horizontal" spacing="sm">
-                <Button variant="secondary" size="sm">Download</Button>
-                <Button variant="secondary" size="sm">Move</Button>
-                <Button variant="danger" size="sm">Delete</Button>
-                <Button variant="ghost" size="sm" onClick={() => setSelected([])}>
+                <Button variant="secondary" size="compact">Download</Button>
+                <Button variant="secondary" size="compact">Move</Button>
+                <Button variant="destructive" size="compact">Delete</Button>
+                <Button variant="tertiary" size="compact" onClick={() => setSelected([])}>
                   Clear
                 </Button>
               </Stack>
