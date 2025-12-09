@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { 
-  Stack, Text, Card, Button, Badge, Input, Modal, IconButton 
+  Stack, Text, Card, Button, Badge, Input, Modal
 } from '@/components/ui'
 import { Plus, Search, Edit, Trash2, X } from 'lucide-react'
 
@@ -111,7 +111,7 @@ export default function GalleryExample() {
               >
                 {/* Type badge */}
                 <div className="absolute top-2 right-2">
-                  <Badge size="sm">{item.type}</Badge>
+                  <Badge compact>{item.type}</Badge>
                 </div>
                 {/* Selection checkbox */}
                 <div className="absolute top-2 left-2">
@@ -136,7 +136,7 @@ export default function GalleryExample() {
                 <Text variant="body-1" weight="medium">{item.title}</Text>
                 <Stack direction="horizontal" spacing="xs" wrap>
                   {item.tags.map(tag => (
-                    <Badge key={tag} size="sm">{tag}</Badge>
+                    <Badge key={tag} compact>{tag}</Badge>
                   ))}
                 </Stack>
                 <Stack direction="horizontal" justify="between" align="center">
@@ -144,8 +144,8 @@ export default function GalleryExample() {
                     {item.author} · {item.date}
                   </Text>
                   <Stack direction="horizontal" spacing="xs">
-                    <IconButton icon={<Edit className="w-4 h-4" />} label="Edit" size="sm" />
-                    <IconButton icon={<Trash2 className="w-4 h-4" />} label="Delete" size="sm" />
+                    <Button variant="icon" size="icon"><Edit className="w-4 h-4" /></Button>
+                    <Button variant="icon" size="icon"><Trash2 className="w-4 h-4" /></Button>
                   </Stack>
                 </Stack>
               </Stack>

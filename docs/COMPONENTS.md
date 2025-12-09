@@ -83,13 +83,12 @@ Primary interaction element.
 
 ```tsx
 <Button
-  variant="primary" | "secondary" | "ghost" | "danger"
-  size="sm" | "md" | "lg"
-  fullWidth={boolean}
-  loading={boolean}
+  variant="primary" | "secondary" | "tertiary" | "destructive" | "icon"
+  size="default" | "compact" | "icon"
+  compact={boolean}  // Alternative to size="compact"
+  icon={<Icon />}
+  dropdown={boolean}
   disabled={boolean}
-  leftIcon={<Icon />}
-  rightIcon={<Icon />}
   onClick={handler}
 >
   {label}
@@ -97,23 +96,19 @@ Primary interaction element.
 ```
 
 **Variant guide:**
-- `primary`: Main action, red (1 per view)
+- `primary`: Main action (1 per view)
 - `secondary`: Supporting actions, outlined
-- `ghost`: Low emphasis, transparent
-- `danger`: Destructive actions
+- `tertiary`: Low emphasis, transparent
+- `destructive`: Dangerous actions (delete, remove)
+- `icon`: Icon-only buttons (use with size="icon")
 
-### IconButton
-Button with only an icon.
-
+**Icon-only buttons:**
 ```tsx
 import { Edit } from 'lucide-react'
 
-<IconButton
-  icon={<Edit className="w-4 h-4" />}
-  label="Edit item"  // Required for accessibility
-  variant="primary" | "secondary" | "ghost"
-  size="sm" | "md" | "lg"
-/>
+<Button variant="icon" size="icon">
+  <Edit className="w-4 h-4" />
+</Button>
 ```
 
 ---
@@ -132,7 +127,20 @@ Text input with label and validation.
   onChange={handler}
   error="Error message"
   helperText="Helper text"
+  icon={<SearchIcon />}  // Optional icon
+  iconPosition="left" | "right"  // Default: "left"
   disabled={boolean}
+/>
+```
+
+**With icon example:**
+```tsx
+import { Search } from 'lucide-react'
+
+<Input 
+  placeholder="Search..." 
+  icon={<Search className="w-4 h-4" />} 
+  iconPosition="left"
 />
 ```
 
@@ -174,10 +182,24 @@ Status indicator or label.
 ```tsx
 <Badge
   variant="default" | "success" | "warning" | "error" | "info"
-  size="sm" | "md"
+  color="gray" | "blue" | "green" | "yellow" | "red"  // Direct color (takes precedence)
+  size="sm" | "md"  // Deprecated: use compact instead
+  compact={boolean}  // Preferred: compact spacing
 >
   {label}
 </Badge>
+```
+
+**Examples:**
+```tsx
+// Semantic variant
+<Badge variant="success">Active</Badge>
+
+// Direct color (closer to Hawkins)
+<Badge color="green">Active</Badge>
+
+// Compact variant
+<Badge compact>New</Badge>
 ```
 
 ---

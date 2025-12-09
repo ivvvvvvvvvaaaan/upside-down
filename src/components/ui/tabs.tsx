@@ -93,8 +93,8 @@ function Tab({ value, children, className }: TabProps) {
         'px-4 py-2 text-body-2 font-medium transition-colors -mb-px',
         'border-b-2 border-transparent',
         isActive 
-          ? 'text-primary-500 border-primary-500' 
-          : 'text-content-secondary hover:text-content-primary',
+          ? 'text-primary border-primary' 
+          : 'text-foreground-dim hover:text-foreground',
         className
       )}
     >

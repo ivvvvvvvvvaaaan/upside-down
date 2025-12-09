@@ -78,7 +78,7 @@ import { FolderOpen } from 'lucide-react'
 
 <Card padding="lg">
   <Stack spacing="md" align="center" className="py-12">
-    <FolderOpen className="w-12 h-12 text-content-tertiary" />
+    <FolderOpen className="w-12 h-12 text-foreground-subtle" />
     <Text variant="headline-3">No items yet</Text>
     <Text variant="body-2" color="secondary">
       Get started by creating your first item
@@ -92,7 +92,7 @@ import { FolderOpen } from 'lucide-react'
 ```tsx
 <Card padding="lg">
   <Stack spacing="md" align="center" className="py-12">
-    <div className="w-8 h-8 border-2 border-primary-500 border-t-transparent rounded-full animate-spin" />
+    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
     <Text variant="body-2" color="secondary">Loading...</Text>
   </Stack>
 </Card>
@@ -145,7 +145,7 @@ function LoginForm() {
           />
         </Stack>
         
-        <Button variant="primary" fullWidth>
+        <Button variant="primary">
           Sign In
         </Button>
       </Stack>
@@ -200,17 +200,18 @@ const validate = () => {
 ### List with Actions
 ```tsx
 import { Edit, Trash2 } from 'lucide-react'
+import { Button } from '@/components/ui'
 
 <Stack spacing="sm">
   {items.map(item => (
     <div 
       key={item.id}
-      className="flex items-center gap-4 p-3 rounded-lg bg-surface-secondary hover:bg-surface-tertiary transition-colors"
+      className="flex items-center gap-4 p-3 rounded-lg bg-surface-1 hover:bg-surface-2 transition-colors"
     >
       <Text variant="body-1" className="flex-1">{item.name}</Text>
       <Stack direction="horizontal" spacing="xs">
-        <IconButton icon={<Edit className="w-4 h-4" />} label="Edit" />
-        <IconButton icon={<Trash2 className="w-4 h-4" />} label="Delete" />
+        <Button variant="icon" size="icon"><Edit className="w-4 h-4" /></Button>
+        <Button variant="icon" size="icon"><Trash2 className="w-4 h-4" /></Button>
       </Stack>
     </div>
   ))}
@@ -232,7 +233,7 @@ function ConfirmDelete({ item, onConfirm }) {
 
   return (
     <>
-      <Button variant="danger" onClick={() => setOpen(true)}>Delete</Button>
+      <Button variant="destructive" onClick={() => setOpen(true)}>Delete</Button>
       
       <Modal isOpen={open} onClose={() => setOpen(false)} title="Confirm Delete" size="sm">
         <Stack spacing="lg">
@@ -241,7 +242,7 @@ function ConfirmDelete({ item, onConfirm }) {
           </Text>
           <Stack direction="horizontal" spacing="sm" justify="end">
             <Button variant="secondary" onClick={() => setOpen(false)}>Cancel</Button>
-            <Button variant="danger" onClick={() => { onConfirm(); setOpen(false); }}>
+            <Button variant="destructive" onClick={() => { onConfirm(); setOpen(false); }}>
               Delete
             </Button>
           </Stack>
@@ -276,12 +277,12 @@ function ConfirmDelete({ item, onConfirm }) {
 ```tsx
 import { Settings, User } from 'lucide-react'
 
-<div className="border-b border-border bg-surface-primary">
+<div className="border-b border-border bg-surface-0">
   <div className="max-w-6xl mx-auto px-6 py-4">
     <Stack direction="horizontal" justify="between" align="center">
       <Text variant="headline-3" weight="bold">App Name</Text>
       <Stack direction="horizontal" spacing="sm">
-        <Button variant="ghost" leftIcon={<Settings className="w-4 h-4" />}>Settings</Button>
+        <Button variant="tertiary" icon={<Settings className="w-4 h-4" />}>Settings</Button>
         <Avatar name="Current User" size="sm" />
       </Stack>
     </Stack>
@@ -310,8 +311,8 @@ const navItems = [
         onClick={() => setActiveItem(item.id)}
         className={`flex items-center gap-3 px-3 py-2 rounded-md text-left transition-colors ${
           isActive 
-            ? 'bg-primary-500 text-white' 
-            : 'text-content-secondary hover:bg-surface-secondary'
+            ? 'bg-primary text-white' 
+            : 'text-foreground-dim hover:bg-surface-1'
         }`}
       >
         <Icon className="w-5 h-5" />

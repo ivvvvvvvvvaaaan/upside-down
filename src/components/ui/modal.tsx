@@ -63,17 +63,17 @@ function Modal({
       {/* Modal content */}
       <div 
         className={cn(
-          'relative w-full mx-4 bg-surface-primary rounded-lg shadow-lg animate-slide-up',
+          'relative w-full mx-4 bg-surface-0 rounded-lg shadow-lg animate-slide-up',
           sizes[size]
         )}
       >
         {/* Header */}
         {title && (
           <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-            <h2 className="text-headline-3 text-content-primary">{title}</h2>
+            <h2 className="text-headline-3 text-foreground">{title}</h2>
             <button
               onClick={onClose}
-              className="p-1 rounded-md text-content-secondary hover:text-content-primary hover:bg-surface-secondary transition-colors"
+              className="p-1 rounded-md text-foreground-dim hover:text-foreground hover:bg-surface-1 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>

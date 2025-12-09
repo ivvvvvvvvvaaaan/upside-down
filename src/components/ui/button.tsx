@@ -1,6 +1,19 @@
 /**
  * HAWKINS DESIGN SYSTEM - Button Component
  * 
+ * PRODUCTION DIFFERENCES:
+ * This component is a simplified prototype version. Production Hawkins Button includes:
+ * - Additional variants: genai-primary, genai-secondary, icon-reverse, tertiary-reverse
+ * - executing/loading/disabled state management with loading spinners
+ * - Tooltip integration via tooltipProps
+ * - href/to props for automatic Link/RouterLink composition
+ * - Extended icon support (leftIcon, rightIcon instead of single icon)
+ * - standalone compact boolean (independent of size)
+ * 
+ * MIGRATION PATH:
+ * When moving to production, add loading state handlers and integrate routing
+ * props for seamless navigation. Consider tooltip prop for accessibility.
+ * 
  * STYLING RULES:
  * - Use values from tailwind.config.ts only
  * - Avoid arbitrary values for colors, font sizes, etc.
@@ -58,7 +71,8 @@ const buttonVariants = cva(
  * 
  * @interface ButtonProps
  * @param {ButtonVariant} variant - Visual style variant. Use 'primary' for main actions, 'secondary' for supporting actions
- * @param {ButtonSize} size - Button size. 'default' for most cases, 'compact' for tight spaces, 'icon' for icon-only buttons
+ * @param {ButtonSize} size - Button size. 'default' for most cases, 'icon' for icon-only buttons
+ * @param {boolean} compact - Apply compact spacing (independent of size). Closer to Hawkins API.
  * @param {boolean} asChild - Render as child component (useful for Next.js Link integration)
  * @param {React.ReactNode} icon - Icon element to display before text
  * @param {boolean} dropdown - Add dropdown chevron icon after text
@@ -74,6 +88,10 @@ const buttonVariants = cva(
  * @example
  * // Icon-only button
  * <Button variant="icon" size="icon"><TrashIcon /></Button>
+ * 
+ * @example
+ * // Compact button (Hawkins-style)
+ * <Button compact>Compact Action</Button>
  */
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -84,13 +102,16 @@ export interface ButtonProps
   icon?: React.ReactNode
   /** Show dropdown chevron after button text */
   dropdown?: boolean
+  /** Apply compact spacing (Hawkins-compatible API) */
+  compact?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, children, icon, dropdown, ...props }, ref) => {
+  ({ className, variant, size, compact, asChild = false, children, icon, dropdown, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    const finalSize = compact ? 'compact' : size
     return (
-      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
+      <Comp className={cn(buttonVariants({ variant, size: finalSize, className }))} ref={ref} {...props}>
         {icon}
         {children}
         {dropdown && (
