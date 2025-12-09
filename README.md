@@ -13,11 +13,22 @@ Open http://localhost:3000
 
 ## Creating Pages
 
+Run the interactive generator:
 ```bash
-npm run new:page feature-name
+npm run new:page
 ```
 
-Creates `src/app/feature-name/page.tsx` with starter code.
+Or provide arguments directly:
+```bash
+npm run new:page feature-name -- --type=gallery
+```
+
+**Available Templates:**
+- `search` - Centralized search center
+- `gallery` - Media collection with Grid/List toggle
+- `manager` - File manager with tree view
+- `empty` - Blank canvas
+
 
 ## Components
 
