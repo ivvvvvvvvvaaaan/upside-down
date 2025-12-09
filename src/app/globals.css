@@ -252,6 +252,99 @@
   --shadow-mid-primary: rgba(0, 0, 0, 0.5);
   --shadow-mid-secondary: rgba(0, 0, 0, 0.6);
 
+  /* INVERTED PRIMITIVE SCALES FOR DARK MODE */
+  
+  /* Purple */
+  --purple-50: 28 14 32;     /* was 950 */
+  --purple-100: 57 25 69;    /* was 900 */
+  --purple-200: 89 33 110;   /* was 800 */
+  --purple-300: 121 42 149;  /* was 700 */
+  --purple-400: 152 45 190;  /* was 600 */
+  --purple-500: 176 56 220;  /* mid */
+  --purple-600: 201 79 245;  /* was 400 */
+  --purple-700: 214 125 247; /* was 300 */
+  --purple-800: 228 161 250; /* was 200 */
+  --purple-900: 236 195 251; /* was 100 */
+  --purple-950: 240 225 245; /* was 50 */
+
+  /* Yellow */
+  --yellow-50: 33 26 13;
+  --yellow-100: 63 48 20;
+  --yellow-200: 97 71 23;
+  --yellow-300: 132 93 22;
+  --yellow-400: 159 108 15;
+  --yellow-500: 195 131 14;
+  --yellow-600: 216 157 49;
+  --yellow-700: 229 181 93;
+  --yellow-800: 242 205 136;
+  --yellow-900: 247 224 181;
+  --yellow-950: 247 239 223;
+
+  /* Blue */
+  --blue-50: 13 22 33;
+  --blue-100: 23 43 71;
+  --blue-200: 28 64 114;
+  --blue-300: 29 82 157;
+  --blue-400: 29 99 196;
+  --blue-500: 48 120 220;
+  --blue-600: 68 142 244;
+  --blue-700: 105 168 255;
+  --blue-800: 148 194 255;
+  --blue-900: 188 216 255;
+  --blue-950: 223 233 247;
+
+  /* Gray */
+  --gray-50: 15 15 15;
+  --gray-100: 22 22 22;
+  --gray-200: 35 35 35;
+  --gray-300: 45 45 45;
+  --gray-400: 65 65 65;
+  --gray-500: 128 128 128;
+  --gray-600: 196 196 196;
+  --gray-700: 214 214 214;
+  --gray-800: 229 229 229;
+  --gray-900: 242 242 242;
+  --gray-950: 250 250 250;
+
+  /* Red */
+  --red-50: 33 13 14;
+  --red-100: 70 21 24;
+  --red-200: 111 24 29;
+  --red-300: 153 22 29;
+  --red-400: 193 17 25;
+  --red-500: 229 9 20;
+  --red-600: 235 57 66;
+  --red-700: 247 99 107;
+  --red-800: 249 146 151;
+  --red-900: 250 188 191;
+  --red-950: 245 225 226;
+
+  /* Indigo */
+  --indigo-50: 13 17 33;
+  --indigo-100: 25 34 71;
+  --indigo-200: 35 51 113;
+  --indigo-300: 44 66 156;
+  --indigo-400: 52 81 197;
+  --indigo-500: 64 97 231;
+  --indigo-600: 91 121 241;
+  --indigo-700: 136 159 249;
+  --indigo-800: 169 185 250;
+  --indigo-900: 199 210 252;
+  --indigo-950: 225 229 245;
+
+  /* Green */
+  --green-50: 11 33 22;
+  --green-100: 15 56 36;
+  --green-200: 17 84 50;
+  --green-300: 16 113 64;
+  --green-400: 12 136 73;
+  --green-500: 10 163 86;
+  --green-600: 43 184 113;
+  --green-700: 82 200 141;
+  --green-800: 132 223 178;
+  --green-900: 178 237 207;
+  --green-950: 222 245 234;
+
   /* Base colors */
   --background-rgb: 15 15 15;
 
@@ -263,10 +356,10 @@
   --accent-rgb: 38 38 38;
 
   /* Destructive Semantic Colors */
-  --destructive-background-rgb: var(--red-300);
+  --destructive-background-rgb: var(--red-600);
   --destructive-foreground-rgb: 0 0 0;
-  --destructive-secondary-border-rgb: var(--red-300);
-  --destructive-secondary-foreground-rgb: var(--red-300);
+  --destructive-secondary-border-rgb: var(--red-600);
+  --destructive-secondary-foreground-rgb: var(--red-600);
 
   /* HSL variables for shadcn/ui compatibility */
   --border: 0 0% 14.9%;
